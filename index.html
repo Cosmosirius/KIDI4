@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WorkSmarter</title>
+    <link
+      rel="icon"
+      href="https://github.com/Cosmosirius/KIDI3/blob/main/assets/favicon.png?raw=true"
+      type="image/png"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT"
+      crossorigin="anonymous"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Geo:ital@0;1&family=Noto+Color+Emoji&family=Press+Start+2P&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+      :root {
+        --primary-color: #f2c0dd;
+        --secondary-color: #25092e;
+        --bg-color: #000;
+        --text-color: #fff;
+      }
+      * {
+        font-family: "Space Mono", monospace;
+        font-weight: 400;
+        font-style: normal;
+      }
+      span {
+        font-family: "Noto Color Emoji", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+      h1,
+      h3 {
+        font-family: "Press Start 2P", system-ui;
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      /* TABS */
+      .nav-tabs::-webkit-scrollbar {
+        display: none;
+      }
+      .nav-tabs {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        border: none;
+      }
+      .nav-tabs .nav-link {
+        color: var(--text-color);
+        border-radius: 1em 1em 0 0;
+      }
+      .nav-tabs .nav-link.active {
+        background-color: var(--text-color);
+        color: var(--secondary-color);
+      }
+      .btn {
+        background-color: var(--secondary-color);
+        color: var(--primary-color);
+        border: none;
+        font-weight: bold;
+      }
+      .btn:hover {
+        background-color: var(--primary-color);
+        color: var(--secondary-color);
+        border: none;
+      }
+      .text-dark {
+        color: var(--secondary-color);
+      }
+    </style>
+  </head>
+
+  <body
+    class="container-fluid d-flex flex-column"
+    style="background-color: var(--bg-color)"
+  >
+    <!-- TITTLE -->
+    <div
+      id="TITTLE"
+      class="d-flex justify-content-center align-items-center text-center mt-4 px-3"
+      style="color: var(--primary-color); width: auto"
+    >
+      <h1 class="fw-bold">Work Smarter, Not Harder</h1>
+    </div>
+
+    <!-- TABS -->
+    <nav>
+      <div
+        class="nav nav-tabs flex-nowrap overflow-auto text-center fw-bold mt-4"
+        id="nav-tab"
+        role="tablist"
+        style="margin: 0 4vw"
+      >
+        <button
+          class="nav-link flex-fill active"
+          id="nav-math-tab"
+          data-bs-toggle="tab"
+          data-bs-target="#nav-math"
+          type="button"
+          role="tab"
+          aria-controls="nav-math"
+          aria-selected="true"
+        >
+          <span class="emoji">➕</span> Math
+        </button>
+        <button
+          class="nav-link flex-fill"
+          id="nav-informatics-tab"
+          data-bs-toggle="tab"
+          data-bs-target="#nav-informatics"
+          type="button"
+          role="tab"
+          aria-controls="nav-informatics"
+          aria-selected="false"
+        >
+          <span class="emoji">💻</span> Informatics
+        </button>
+        <button
+          class="nav-link flex-fill"
+          id="nav-physic-tab"
+          data-bs-toggle="tab"
+          data-bs-target="#nav-physic"
+          type="button"
+          role="tab"
+          aria-controls="nav-physic"
+          aria-selected="false"
+        >
+          <span class="emoji">📐</span> Physic
+        </button>
+        <button
+          class="nav-link flex-fill"
+          id="nav-chemistry-tab"
+          data-bs-toggle="tab"
+          data-bs-target="#nav-chemistry"
+          type="button"
+          role="tab"
+          aria-controls="nav-chemistry"
+          aria-selected="false"
+        >
+          <span class="emoji">🧪</span> chemistry
+        </button>
+        <button
+          class="nav-link flex-fill"
+          id="nav-biology-tab"
+          data-bs-toggle="tab"
+          data-bs-target="#nav-biology"
+          type="button"
+          role="tab"
+          aria-controls="nav-biology"
+          aria-selected="false"
+        >
+          <span class="emoji">🧬</span> Biology
+        </button>
+      </div>
+    </nav>
+    <div
+      class="tab-content"
+      id="nav-tabContent"
+      style="
+        margin: 0 4vw;
+        background-color: var(--text-color);
+        border-radius: 0 0 2em 2em;
+      "
+    >
+      <!-- Math -->
+      <div
+        class="tab-pane fade show active"
+        id="nav-math"
+        role="tabpanel"
+        aria-labelledby="nav-math-tab"
+        tabindex="0"
+      >
+        <div
+          class="d-flex flex-column flex-md-row align-items-center justify-content-between text-dark py-5"
+        >
+          <div class="col px-5 text-center text-md-start" data-aos="fade-right">
+            <h3 class="fw-bold">Area of 2D Shapes</h3>
+            <p class="lead">
+              Understanding the area helps us measure how much surface a shape
+              covers. Each shape has a specific formula depending on its
+              geometry.
+            </p>
+          </div>
+          <div class="col-md-6 d-flex flex-column px-5 gap-4">
+            <select
+              id="shapeSelect"
+              class="form-select"
+              aria-label="Default select example"
+            >
+              <option selected>Choose 2D Shapes:</option>
+              <option value="1">Rectangle</option>
+              <option value="2">Triangle</option>
+              <option value="3">Circle</option>
+            </select>
+            <form id="rectangleForm" class="row g-3" style="display: none">
+              <div class="col-md-6">
+                <label for="inputLength" class="form-label">Length(cm)</label>
+                <input type="number" class="form-control" id="inputLength" />
+              </div>
+              <div class="col-md-6">
+                <label for="inputWidth" class="form-label">Width(cm)</label>
+                <input type="number" class="form-control" id="inputWidth" />
+              </div>
+            </form>
+            <form id="triangleForm" class="row g-3" style="display: none">
+              <div class="col-md-6">
+                <label for="inputBase" class="form-label">Base(cm)</label>
+                <input type="number" class="form-control" id="inputBase" />
+              </div>
+              <div class="col-md-6">
+                <label for="inputHeight" class="form-label">Height(cm)</label>
+                <input type="number" class="form-control" id="inputHeight" />
+              </div>
+            </form>
+            <form id="circleForm" class="row g-3" style="display: none">
+              <div class="col-md-6">
+                <label for="inputRadius" class="form-label">radius(cm)</label>
+                <input type="number" class="form-control" id="inputRadius" />
+              </div>
+            </form>
+            <button type="submit" class="btn btn-primary" id="btnMath">
+              Calculate
+            </button>
+            <div id="result" class="mt-3 text-dark fw-semibold"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- INFORMATICS -->
+      <div
+        class="tab-pane fade"
+        id="nav-informatics"
+        role="tabpanel"
+        aria-labelledby="nav-informatics-tab"
+        tabindex="0"
+      >
+        <div
+          class="d-flex flex-column flex-md-row align-items-center justify-content-between text-dark py-5"
+        >
+          <div class="col px-5 text-center text-md-start" data-aos="fade-right">
+            <h3 class="fw-bold">Decimal to Binary Conversion</h3>
+            <p class="lead">
+              Binary is the language of computers. It uses only two digits: 0
+              and 1. Each binary digit represents a power of 2.
+            </p>
+          </div>
+          <div class="col-md-6 d-flex flex-column px-5 gap-4">
+            <form class="row g-3">
+              <div class="col-md-6">
+                <label for="inputDecimal" class="form-label">Decimal</label>
+                <input type="number" class="form-control" id="inputDecimal" />
+              </div>
+              <button type="submit" class="btn btn-primary" id="btnInfo">
+                Calculate
+              </button>
+            </form>
+            <div id="resultM" class="mt-3 text-dark fw-semibold"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PHYSIC -->
+      <div
+        class="tab-pane fade"
+        id="nav-physic"
+        role="tabpanel"
+        aria-labelledby="nav-physic-tab"
+        tabindex="0"
+      >
+        <div
+          class="d-flex flex-column flex-md-row align-items-center justify-content-between text-dark py-5"
+        >
+          <div class="col px-5 text-center text-md-start" data-aos="fade-right">
+            <h3 class="fw-bold">Newton's Second Law of Motion</h3>
+            <p class="lead">
+              Force is the result of mass multiplied by acceleration. It
+              describes how much an object accelerates when a force is applied.
+            </p>
+          </div>
+          <div class="col-md-6 d-flex flex-column px-5 gap-4">
+            <form id="rectangleForm" class="row g-3">
+              <div class="col-md-6">
+                <label for="inputMass" class="form-label">Mass(kg)</label>
+                <input type="number" class="form-control" id="inputMass" />
+              </div>
+              <div class="col-md-6">
+                <label for="inputAcceleration" class="form-label"
+                  >Acceleration(m/s<sup>2</sup>)</label
+                >
+                <input
+                  type="number"
+                  class="form-control"
+                  id="inputAcceleration"
+                />
+              </div>
+            </form>
+            <button type="submitF" class="btn btn-primary" id="btnPhysic">
+              Calculate
+            </button>
+            <div id="resultF" class="mt-3 text-dark fw-semibold"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CHEMISTRY -->
+      <div
+        class="tab-pane fade"
+        id="nav-chemistry"
+        role="tabpanel"
+        aria-labelledby="nav-chemistry-tab"
+        tabindex="0"
+      >
+        <div
+          class="d-flex flex-column flex-md-row align-items-center justify-content-between text-dark py-5"
+        >
+          <div class="col px-5 text-center text-md-start" data-aos="fade-right">
+            <h3 class="fw-bold">Convert Between °C, °F, and K</h3>
+            <p class="lead">
+              Temperature is measured in Celsius (°C), Fahrenheit (°F), or
+              Kelvin (K). These units can be converted using the following
+              formulas:
+            </p>
+          </div>
+          <div class="col-md-6 d-flex flex-column px-5 gap-4">
+            <form id="tempForm" class="row align-items-center g-3 gap-2">
+              <div class="flex-fill">
+                <div class="d-flex g-2 gap-2">
+                  <label for="inputForm" class="form-label">From</label>
+                  <input type="number" class="form-control" id="inputForm" />
+                  <select
+                    id="formSelect1"
+                    class="form-select"
+                    aria-label="Default select example"
+                  >
+                    <option selected>Choose Temp:</option>
+                    <option value="1">Celsius</option>
+                    <option value="2">Fahrenheit</option>
+                    <option value="3">Kelvin</option>
+                  </select>
+                </div>
+              </div>
+              <!-- <p class="col-md-2 text-center flex-fill"></p> -->
+              <div class="flex-fill">
+                <div class="d-flex g-2 gap-2">
+                  <label for="inputTo" class="form-label">To</label>
+                  <select
+                    id="toSelect"
+                    class="form-select flex-fill"
+                    aria-label="Default select example"
+                  >
+                    <option selected>Choose Temp:</option>
+                    <option value="1">Celsius</option>
+                    <option value="2">Fahrenheit</option>
+                    <option value="3">Kelvin</option>
+                  </select>
+                </div>
+              </div>
+            </form>
+            <button type="submitT" class="btn btn-primary" id="btnChemistry">
+              Convert
+            </button>
+            <div id="resultT" class="mt-3 text-dark fw-semibold"></div>
+          </div>
+        </div>
+      </div>
+      <!-- BIOLOGY -->
+      <div
+        class="tab-pane fade"
+        id="nav-biology"
+        role="tabpanel"
+        aria-labelledby="nav-biology-tab"
+        tabindex="0"
+      >
+        <div
+          class="d-flex flex-column flex-md-row align-items-center justify-content-between text-dark py-5"
+        >
+          <div class="col px-5 text-center text-md-start" data-aos="fade-right">
+            <h3 class="fw-bold">Calculate BMI</h3>
+            <p class="lead">
+              BMI measures body fat based on weight and height. It helps assess
+              whether a person is underweight, normal, overweight, or obese.
+            </p>
+          </div>
+          <div class="col-md-6 d-flex flex-column px-5 gap-4">
+            <form id="bmiForm" class="row g-3">
+              <div class="col-md-6">
+                <label for="inputW" class="form-label">Weight(kg)</label>
+                <input type="number" class="form-control" id="inputW" />
+              </div>
+              <div class="col-md-6">
+                <label for="inputH" class="form-label">Height(cm)</label>
+                <input type="number" class="form-control" id="inputH" />
+              </div>
+            </form>
+            <button type="submitbmi" class="btn btn-primary" id="btnBiology">
+              Calculate
+            </button>
+            <div id="resultBmi" class="mt-3 text-dark fw-semibold"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTACT -->
+    <footer id="contact" class="text-dark pt-5 sticky-end">
+      <div class="container mb-5">
+        <div
+          class="bg-light rounded-4 p-5 d-flex flex-column flex-md-row justify-content-between align-items-center" style="color: var(--secondary-color);"
+        >
+          <div class="mb-4 mb-md-0" style="max-width: 500px">
+            <h3 class="fw-bold">Contact Us</h3>
+            <p class="mb-0">Have questions or need support? Reach out to us:</p>
+            
+          </div>
+          <div class=" mt-4 mt-md-0">
+            <ul class="list-unstyled mt-3">
+              <li>
+                Email:
+                <a href="mailto:info@example.com" class="text-dark"
+                  >info@example.com</a
+                >
+              </li>
+              <li>
+                Phone:
+                <a href="tel:+1234567890" class="text-dark">+1 234 567 890</a>
+              </li>
+              <li>Address: 123 Java Street, Central Java, Indonesia</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="text-center py-3" style="border-radius: 2em 2em 0 0; background-color: var(--primary-color); color: var(--secondary-color);">
+        © 2025 WorkSmart. All Rights Reserved.
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>
